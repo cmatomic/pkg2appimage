@@ -2,9 +2,9 @@ app: GIMP
 binpatch: true
 
 ingredients:
-  dist: trusty
+  dist: xenial
   sources:
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
   ppas:
     - otto-kesselgulasch/gimp-edge
   pretend:
