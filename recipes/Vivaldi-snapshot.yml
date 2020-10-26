@@ -1,15 +1,24 @@
-app: Vivaldi
+app: vivaldi-snapshot
 
 ingredients:
   package: vivaldi-snapshot
-  dist: trusty
-  sources:
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
-    - deb http://repo.vivaldi.com/snapshot/deb stable main
-
+  dist: xenial
+  sources: 
+    - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
+    - deb http://repo.vivaldi.com/stable/deb/ stable main
 script:
-  - sed -i -e 's|/usr/bin/||g' vivaldi-snapshot.desktop
-  - sed -i -e 's|^Name=.*|Name=Vivaldi|g' vivaldi-snapshot.desktop
-  - ( cd usr/bin ; rm vivaldi-snapshot ; ln -s vivaldi vivaldi-snapshot )
-  - mv -f opt/vivaldi*/* usr/bin/ && rm -r opt/
-  - cp usr/bin/resources/vivaldi/resources/icon_128.png vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_64.png usr/share/icons/hicolor/64x64/apps/vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_32.png usr/share/icons/hicolor/32x32/apps/vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_256.png usr/share/icons/hicolor/256x256/apps/vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_24.png usr/share/icons/hicolor/24x24/apps/vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_128.png usr/share/icons/hicolor/128x128/apps/vivaldi-snapshot.png
+  - mv  ./opt/vivaldi-snapshot/product_logo_48.png usr/share/icons/hicolor/48x48/apps/vivaldi-snapshot.png
+  - cp usr/share/icons/hicolor/256x256/apps/vivaldi-snapshot.png .
+  - sed -i -e 's|/usr/bin/vivaldi-snapshot %U|AppRun|g' vivaldi-snapshot.desktop
+  - cat > ./AppRun <<\EOF
+  - #!/bin/sh
+  - HERE=$(dirname $(readlink -f "${0}"))
+  - export LD_LIBRARY_PATH="${HERE}"/usr/lib:$PATH
+  - "${HERE}"/opt/vivaldi-snapshot/vivaldi-snapshot --password-store=basic $@
+  - EOF
+  - chmod a+x ./AppRun
