@@ -1,16 +1,24 @@
-app: Vivaldi
+app: vivaldi-stable
 
 ingredients:
   package: vivaldi-stable
-  dist: trusty
-  sources:
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
-  script:
-    - DEB=$(wget -q "https://vivaldi.com/download/" -O - | grep amd64.deb | cut -d '"' -f 4)
-    - wget -c "$DEB"
-
+  dist: xenial
+  sources: 
+    - deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe
+    - deb http://repo.vivaldi.com/stable/deb/ stable main
 script:
-  - sed -i -e 's|/usr/bin||g' vivaldi-stable.desktop
-  - ( cd usr/bin ; rm vivaldi-stable ; ln -s vivaldi vivaldi-stable )
-  - mv -f opt/vivaldi/* usr/bin/ && rm -r opt/
-  - cp usr/bin/resources/vivaldi/resources/icon_128.png vivaldi.png
+  - mv ./opt/vivaldi/product_logo_64.png usr/share/icons/hicolor/64x64/apps/vivaldi.png
+  - mv ./opt/vivaldi/product_logo_32.png usr/share/icons/hicolor/32x32/apps/vivaldi.png
+  - mv ./opt/vivaldi/product_logo_256.png usr/share/icons/hicolor/256x256/apps/vivaldi.png
+  - mv ./opt/vivaldi/product_logo_24.png usr/share/icons/hicolor/24x24/apps/vivaldi.png
+  - mv ./opt/vivaldi/product_logo_128.png usr/share/icons/hicolor/128x128/apps/vivaldi.png
+  - mv ./opt/vivaldi/product_logo_48.png usr/share/icons/hicolor/48x48/apps/vivaldi.png
+  - cp usr/share/icons/hicolor/256x256/apps/vivaldi.png .
+  - sed -i -e 's|/usr/bin/vivaldi-stable %U|AppRun|g' vivaldi-stable.desktop
+  - cat > ./AppRun <<\EOF
+  - #!/bin/sh
+  - HERE=$(dirname $(readlink -f "${0}"))
+  - export LD_LIBRARY_PATH="${HERE}"/usr/lib:$PATH
+  - "${HERE}"/opt/vivaldi/vivaldi --password-store=basic $@
+  - EOF
+  - chmod a+x ./AppRun
