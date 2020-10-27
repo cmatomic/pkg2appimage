@@ -196,10 +196,10 @@ ingredients:
     - xbmc-visualization-fishbmc
   dist: xenial
   sources:
-    - deb http://security.ubuntu.com/ubuntu/ xenial main universe
     - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
   ppas:
     - team-xbmc/ppa
+    - linux-schools/samba-latest
 script:
   - cat > ./usr/bin/kodi <<\EOF
   - #!/bin/bash
