@@ -1,24 +1,211 @@
-# FIXME - help appreciated
-# Not finding its resources yet
-
 app: Kodi
-binpatch: true
+union: true
 
 ingredients:
-  dist: trusty
+  packages:
+    - samba-libs
+    - samba
+    - libpcrecpp0v5
+    - libcurl3
+    - libcrossguid1
+    - dcadec1	 
+    - flatbuffers
+    - libglm-dev
+    - i965-va-driver
+    - kodi
+    - kodi-audiodecoder-2sf
+    - kodi-audiodecoder-asap
+    - kodi-audiodecoder-dumb
+    - kodi-audiodecoder-fluidsynth
+    - kodi-audiodecoder-gme
+    - kodi-audiodecoder-gsf
+    - kodi-audiodecoder-modplug
+    - kodi-audiodecoder-ncsf
+    - kodi-audiodecoder-nosefart
+    - kodi-audiodecoder-openmpt 
+    - kodi-audiodecoder-organya
+    - kodi-audiodecoder-qsf
+    - kodi-audiodecoder-sidplay
+    - kodi-audiodecoder-snesapu
+    - kodi-audiodecoder-ssf
+    - kodi-audiodecoder-stsound
+    - kodi-audiodecoder-timidity
+    - kodi-audiodecoder-upse
+    - kodi-audiodecoder-usf	 
+    - kodi-audiodecoder-vgmstream
+    - kodi-audiodecoder-wsr
+    - kodi-audiodsp-freesurround
+    - kodi-audioencoder-flac
+    - kodi-audioencoder-lame
+    - kodi-audioencoder-vorbis
+    - kodi-audioencoder-wav
+#   - kodi-game-libretro
+#   - kodi-game-libretro-2048
+#   - kodi-game-libretro-4do
+#   - kodi-game-libretro-81
+#   - kodi-game-libretro-atari800
+#   - kodi-game-libretro-beetle-bsnes
+#   - kodi-game-libretro-beetle-gba
+#   - kodi-game-libretro-beetle-lynx
+#   - kodi-game-libretro-beetle-ngp
+#   - kodi-game-libretro-beetle-pce-fast
+#   - kodi-game-libretro-beetle-pcfx 
+#   - kodi-game-libretro-beetle-psx
+#   - kodi-game-libretro-beetle-saturn
+#   - kodi-game-libretro-beetle-supergrafx 
+#   - kodi-game-libretro-beetle-vb 	 
+#   - kodi-game-libretro-beetle-wswan
+#   - kodi-game-libretro-blastem
+#   - kodi-game-libretro-bluemsx
+#   - kodi-game-libretro-bnes
+#   - kodi-game-libretro-boom3
+#   - kodi-game-libretro-bsnes-mercury-accuracy
+#   - kodi-game-libretro-bsnes-mercury-balanced	 
+#   - kodi-game-libretro-bsnes-mercury-performance	 
+#   - kodi-game-libretro-cannonball
+#   - kodi-game-libretro-cap32
+#   - kodi-game-libretro-chailove
+#   - kodi-game-libretro-crocods
+#   - kodi-game-libretro-daphne
+#   - kodi-game-libretro-desmume
+#   - kodi-game-libretro-dinothawr
+#   - kodi-game-libretro-dosbox
+#   - kodi-game-libretro-fbalpha
+#   - kodi-game-libretro-fbalpha2012
+#   - kodi-game-libretro-fbneo
+#   - kodi-game-libretro-fceumm
+#   - kodi-game-libretro-flycast
+#   - kodi-game-libretro-fmsx
+#   - kodi-game-libretro-fuse
+#   - kodi-game-libretro-gambatte
+#   - kodi-game-libretro-genplus
+#   - kodi-game-libretro-gw
+#   - kodi-game-libretro-handy
+#   - kodi-game-libretro-hatari
+#   - kodi-game-libretro-lutro
+#   - kodi-game-libretro-mame
+#   - kodi-game-libretro-mame2000	 	
+#   - kodi-game-libretro-mame2003 	 	
+#   - kodi-game-libretro-mame2010
+#   - kodi-game-libretro-mame2015
+#   - kodi-game-libretro-mame2016
+#   - kodi-game-libretro-melonds
+#   - kodi-game-libretro-mesen
+#   - kodi-game-libretro-meteor
+#   - kodi-game-libretro-mgba
+#   - kodi-game-libretro-mrboom
+#   - kodi-game-libretro-mupen64plus
+#   - kodi-game-libretro-mupen64plus-nx
+#   - kodi-game-libretro-nestopia
+#   - kodi-game-libretro-nx
+#   - kodi-game-libretro-o2em
+#   - kodi-game-libretro-opera
+#   - kodi-game-libretro-pcem
+#   - kodi-game-libretro-pcsx-rearmed
+#   - kodi-game-libretro-picodrive
+#   - kodi-game-libretro-pokemini
+#   - kodi-game-libretro-ppsspp
+#   - kodi-game-libretro-prboom
+#   - kodi-game-libretro-prosystem
+#   - kodi-game-libretro-quicknes
+#   - kodi-game-libretro-reicast
+#   - kodi-game-libretro-sameboy
+#   - kodi-game-libretro-scummvm
+#   - kodi-game-libretro-snes9x
+#   - kodi-game-libretro-snes9x2002
+#   - kodi-game-libretro-snes9x2010
+#   - kodi-game-libretro-stella
+#   - kodi-game-libretro-tgbdual
+#   - kodi-game-libretro-theodore
+#   - kodi-game-libretro-thepowdertoy
+#   - kodi-game-libretro-tyrquake
+#   - kodi-game-libretro-uae
+#   - kodi-game-libretro-vba-next
+#   - kodi-game-libretro-vbam	
+#   - kodi-game-libretro-vecx
+#   - kodi-game-libretro-vice
+#   - kodi-game-libretro-virtualjaguar
+#   - kodi-game-libretro-yabause
+#   - kodi-imagedecoder-heif
+#   - kodi-imagedecoder-mpo
+#   - kodi-imagedecoder-raw
+    - kodi-inputstream-adaptive
+#   - kodi-inputstream-mpd
+#   - kodi-inputstream-rtmp
+#   - kodi-inputstream-smoothstream
+    - kodi-peripheral-joystick
+#   - kodi-peripheral-xarcade
+    - kodi-pvr-argustv
+    - kodi-pvr-demo
+    - kodi-pvr-dvblink
+    - kodi-pvr-dvbviewer
+    - kodi-pvr-filmon
+    - kodi-pvr-hdhomerun
+    - kodi-pvr-hts
+    - kodi-pvr-iptvsimple
+    - kodi-pvr-mediaportal-tvserver
+    - kodi-pvr-mythtv
+    - kodi-pvr-nextpvr
+    - kodi-pvr-njoy
+    - kodi-pvr-octonet
+    - kodi-pvr-pctv
+    - kodi-pvr-sledovanitv-cz
+    - kodi-pvr-stalker
+    - kodi-pvr-teleboy
+    - kodi-pvr-vbox
+    - kodi-pvr-vdr-vnsi
+#   - kodi-pvr-vuplus
+#   - kodi-pvr-waipu
+    - kodi-pvr-wmc
+    - kodi-pvr-zattoo
+    - kodi-screensaver-asteroids
+    - kodi-screensaver-asterwave
+    - kodi-screensaver-biogenesis
+    - kodi-screensaver-cpblobs
+    - kodi-screensaver-greynetic
+    - kodi-screensaver-matrixtrails
+    - kodi-screensaver-pingpong
+    - kodi-screensaver-pyro
+    - kodi-screensaver-stars
+    - kodi-vfs-libarchive
+    - kodi-vfs-nfs	
+    - kodi-vfs-rar
+    - kodi-vfs-sacd
+#   - kodi-vfs-sftp
+    - kodi-visualization-fishbmc
+    - kodi-visualization-goom
+    - kodi-visualization-pictureit
+    - kodi-visualization-projectm	
+    - kodi-visualization-shadertoy	
+    - kodi-visualization-spectrum	
+    - kodi-visualization-starburst	
+    - kodi-visualization-waveform	
+    - libkodiplatform-dev
+    - libarchive13
+    - libbluray2
+    - libcec
+    - libopenmpt0
+    - libva1
+    - opengl-image-dev
+    - libp8-platform2
+    - libplatform2
+    - libprojectm3
+    - python-cryptodome
+#   - shairplay
+#   - libwayland-client
+    - xbmc-visualization-fishbmc
+  dist: xenial
   sources:
-    - deb http://security.ubuntu.com/ubuntu/ trusty main universe
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://security.ubuntu.com/ubuntu/ xenial main universe
+    - deb http://archive.ubuntu.com/ubuntu/ xenial main universe
   ppas:
     - team-xbmc/ppa
-    - team-xbmc/xbmc-nightly
-
 script:
   - cat > ./usr/bin/kodi <<\EOF
   - #!/bin/bash
   - SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-  - export XBMC_HOME=${SCRIPT_PATH}/../share/kodi
-  - exec ${SCRIPT_PATH}/../lib/x86_64-linux-gnu/kodi/kodi.bin "$@"
+  - export KODI_HOME=${SCRIPT_PATH}/../share/kodi
+  - exec ${SCRIPT_PATH}/../lib/x86_64-linux-gnu/kodi/kodi-x11 "$@"
   - EOF
   - chmod +x ./usr/bin/kodi
   - mv ./usr/lib/x86_64-linux-gnu/samba/* ./usr/lib/x86_64-linux-gnu/
