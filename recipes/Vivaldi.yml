@@ -1,6 +1,7 @@
 app: vivaldi-stable
 
 ingredients:
+    - libavcodec-ffmpeg-extra56
   package: vivaldi-stable
   dist: xenial
   sources: 
